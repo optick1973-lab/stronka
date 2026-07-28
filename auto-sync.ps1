@@ -12,11 +12,13 @@ function Write-Log {
 
 Set-Location $repoRoot
 Write-Log 'Auto-sync watcher started.'
+$lastState = ''
 
 while ($true) {
     try {
         $status = git status --porcelain --untracked-files=all 2>$null
-        if ($status) {
+        if ($status -and $status -ne $lastState) {
+            $lastState = $status
             Write-Log 'Changes detected. Staging and committing...'
             git add -A
             $branch = git branch --show-current
@@ -34,6 +36,9 @@ while ($true) {
             else {
                 Write-Log 'No new commit was created.'
             }
+        }
+        elseif (-not $status) {
+            $lastState = ''
         }
     }
     catch {
