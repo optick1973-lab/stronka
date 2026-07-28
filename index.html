@@ -63,7 +63,8 @@
     .section { padding: 5rem 0; }
     .section h2 { font-size: 2.5rem; margin: .55rem 0 1rem; line-height: 1.06; }
     .section small { color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-weight: 700; }
-    .cards { display: grid; gap: 1.5rem; }
+    .cards { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .feature-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .card { padding: 1.8rem 1.5rem; border-radius: 28px; background: rgba(8,24,41,.95); border: 1px solid rgba(148,163,184,.12); transition: transform .25s ease, border-color .25s ease; overflow-wrap: break-word; }
     .card:hover { transform: translateY(-4px); border-color: rgba(34,197,94,.35); }
     .card-title { margin: 1rem 0 .7rem; font-size: 1.18rem; line-height: 1.35; }
@@ -110,9 +111,9 @@
     }
 
     .process-icon-wrapper {
-      width: 84px;
-      height: 84px;
-      border-radius: 24px;
+      width: 96px;
+      height: 96px;
+      border-radius: 26px;
       background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(16, 185, 129, 0.07));
       border: 1px solid rgba(34, 197, 94, 0.3);
       display: grid;
@@ -195,6 +196,7 @@
     @media (max-width: 767px) {
       .nav { justify-content: center; width: 100%; }
       .header-inner { flex-direction: column; align-items: flex-start; }
+      .feature-cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -266,36 +268,21 @@
       <section id="features" class="section">
         <small>Dlaczego my?</small>
         <h2>Dlaczego my?</h2>
-        <div class="cards" style="margin-top:1.25rem; grid-template-columns: repeat(3, minmax(0,1fr)); gap:1rem;">
+        <div class="cards feature-cards" style="margin-top:1.25rem;">
           <article class="card">
-            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
+            <div style="font-size:1.8rem; color:var(--accent);">✔</div>
             <h3 class="card-title">Bezpłatna analiza</h3>
             <p>Analiza dokumentów jest darmowa od pierwszego kontaktu</p>
           </article>
           <article class="card">
-            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
-            <h3 class="card-title">Szybka decyzja</h3>
-            <p>Oferta przygotowana w ciągu 24 godzin</p>
+            <div style="font-size:1.8rem; color:var(--accent);">✔</div>
+            <h3 class="card-title">Oferta w 24h</h3>
+            <p>Ofertę przygotowujemy zwykle w ciągu 24 godzin</p>
           </article>
           <article class="card">
-            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
-            <h3 class="card-title">Bez ukrytych kosztów</h3>
-            <p>Nie pobieramy prowizji ani opłat od klientów</p>
-          </article>
-          <article class="card">
-            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
-            <h3 class="card-title">Bez zobowiązań</h3>
-            <p>Zawsze decydujesz sam, czy przyjąć ofertę odkupu</p>
-          </article>
-          <article class="card">
-            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
-            <h3 class="card-title">Prosta umowa</h3>
-            <p>Umowa cesji jest krótka i zrozumiała</p>
-          </article>
-          <article class="card">
-            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
-            <h3 class="card-title">Obsługa online</h3>
-            <p>Cała procedura może odbyć się zdalnie, na terenie całej Polski</p>
+            <div style="font-size:1.8rem; color:var(--accent);">✔</div>
+            <h3 class="card-title">Brak prowizji</h3>
+            <p>Nie pobieramy prowizji ani ukrytych opłat</p>
           </article>
         </div>
       </section>
@@ -316,10 +303,13 @@
         <div class="cards" style="margin-top:2rem;">
           <article class="card">
             <div style="display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;">
-              <div style="width:94px; height:94px; border-radius:24px; display:grid; place-items:center; background:rgba(34,197,94,.14);">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 12C3 7.30558 6.85786 3 12 3C17.1421 3 21 7.30558 21 12V18H20C19.4477 18 19 18.4477 19 19C19 19.5523 19.4477 20 20 20H4C4.55228 20 5 19.5523 5 19C5 18.4477 4.55228 18 4 18H3V12Z" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.06)"/>
-                  <path d="M7 11L10.5 14L17 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <div style="width:100px; height:100px; border-radius:28px; display:grid; place-items:center; background:rgba(34,197,94,.14);">
+                <svg width="52" height="52" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40" cy="40" r="36" fill="rgba(16,185,129,0.1)" stroke="rgba(34,197,94,0.35)" stroke-width="4"/>
+                  <path d="M24 44L32 34L44 44L56 32" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M26 54H54" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M30 24H50" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M42 24V18" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
                 </svg>
               </div>
               <div style="text-align:right;">
@@ -333,10 +323,13 @@
 
           <article class="card">
             <div style="display:flex; gap:1rem; align-items:center;">
-              <div style="width:94px; height:94px; border-radius:24px; display:grid; place-items:center; background:rgba(16,185,129,.14);">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 3L5 6.5V11C5 16.25 8.5 19.75 12 22.5C15.5 19.75 19 16.25 19 11V6.5L12 3Z" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.06)"/>
-                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <div style="width:100px; height:100px; border-radius:28px; display:grid; place-items:center; background:rgba(16,185,129,.14);">
+                <svg width="52" height="52" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M40 10C28 10 18 17 14 28L16 38H22V50H58V38H64L66 28C62 17 52 10 40 10Z" fill="rgba(255,255,255,0.08)" stroke="rgba(34,197,94,0.35)" stroke-width="4"/>
+                  <path d="M28 42H52" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M34 42V32" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M46 42V36" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M30 30H50" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
                 </svg>
               </div>
               <div>
@@ -350,12 +343,14 @@
 
           <article class="card">
             <div style="display:flex; gap:1rem; align-items:center;">
-              <div style="width:94px; height:94px; border-radius:24px; display:grid; place-items:center; background:rgba(34,197,94,.14);">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.06)"/>
-                  <path d="M8 8H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M12 16H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <div style="width:100px; height:100px; border-radius:28px; display:grid; place-items:center; background:rgba(34,197,94,.14);">
+                <svg width="52" height="52" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="18" y="18" width="44" height="44" rx="10" fill="rgba(255,255,255,0.08)" stroke="rgba(34,197,94,0.35)" stroke-width="4"/>
+                  <path d="M26 30H54" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M26 38H54" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M36 46H48" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M52 52V60" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M46 60H58" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
                 </svg>
               </div>
               <div>
@@ -380,10 +375,13 @@
           <div class="process-steps">
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 8H17C18.1046 8 19 8.89543 19 10V16C19 17.1046 18.1046 18 17 18H7C5.89543 18 5 17.1046 5 16V10C5 8.89543 5.89543 8 7 8Z" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.08)"/>
-                  <path d="M7 11H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M7 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <svg width="54" height="54" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="18" y="18" width="44" height="44" rx="8" fill="rgba(255,255,255,0.08)" stroke="rgba(34,197,94,0.3)" stroke-width="4"/>
+                  <path d="M28 30H52" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M28 38H52" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M28 46H44" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M44 22V14" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M36 14H52" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
                 </svg>
               </div>
               <div class="process-card-content">
@@ -395,11 +393,13 @@
 
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 5H19V19H5V5Z" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.08)"/>
-                  <path d="M8 9H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M8 13H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M8 17H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <svg width="54" height="54" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="20" y="18" width="40" height="44" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(34,197,94,0.3)" stroke-width="4"/>
+                  <path d="M28 28H52" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M28 36H48" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M28 44H46" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M32 52H44" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M52 24L60 30V42" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
                 </svg>
               </div>
               <div class="process-card-content">
@@ -411,9 +411,13 @@
 
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 3C8.13401 3 5 6.13401 5 10C5 13.866 8.13401 17 12 17C15.866 17 19 13.866 19 10C19 6.13401 15.866 3 12 3Z" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.08)"/>
-                  <path d="M12 6V10L14.5 11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <svg width="54" height="54" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 24H56V46H24V24Z" fill="rgba(255,255,255,0.08)" stroke="rgba(34,197,94,0.3)" stroke-width="4"/>
+                  <path d="M30 30H50" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M30 38H46" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M32 46H44" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M40 52C44 52 46 54 46 58C46 60 44 62 40 62C36 62 34 60 34 58C34 54 36 52 40 52Z" fill="var(--accent)"/>
+                  <path d="M35 60H45" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
                 </svg>
               </div>
               <div class="process-card-content">
