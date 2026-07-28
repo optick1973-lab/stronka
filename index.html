@@ -40,10 +40,6 @@
     .hero-copy h1 { margin: .9rem 0 1rem; font-size: clamp(2.5rem, 5vw, 4.2rem); line-height: 1.02; letter-spacing: -.04em; }
     .hero-copy p { margin: 0; color: var(--muted); line-height: 1.75; max-width: 42rem; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; }
-    .hero-badges { display: grid; gap: .75rem; margin-top: 1.75rem; grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .hero-badge { display: flex; align-items: center; gap: .75rem; padding: .9rem 1rem; border-radius: 20px; background: rgba(15,36,55,.85); border: 1px solid rgba(148,163,184,.14); color: var(--text); font-size: .95rem; }
-    .hero-badge span { font-size: 1.2rem; }
-    .hero-form { display: grid; gap: .85rem; margin-top: 1.5rem; }
     .hero-form input, .hero-form select, .hero-form button { width: 100%; border-radius: 16px; border: 1px solid rgba(148,163,184,.18); background: #071923; color: var(--text); padding: 1rem 1rem; }
     .hero-form button { background: var(--accent); color: #04292b; border: none; cursor: pointer; }
     .hero-form-row { display: grid; gap: .85rem; grid-template-columns: 1fr 1fr; }
@@ -64,10 +60,14 @@
     .section h2 { font-size: 2.5rem; margin: .55rem 0 1rem; line-height: 1.06; }
     .section small { color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-weight: 700; }
     .cards { display: grid; gap: 1.5rem; }
-    .card { padding: 1.8rem; border-radius: 28px; background: rgba(8,24,41,.95); border: 1px solid rgba(148,163,184,.12); transition: transform .25s ease, border-color .25s ease; }
+    .card { padding: 1.85rem 1.75rem; border-radius: 28px; background: rgba(8,24,41,.95); border: 1px solid rgba(148,163,184,.12); transition: transform .25s ease, border-color .25s ease; overflow-wrap: anywhere; }
     .card:hover { transform: translateY(-4px); border-color: rgba(34,197,94,.35); }
-    .card-title { margin: 1rem 0 .7rem; font-size: 1.25rem; }
-    .card p { margin: 0; color: var(--muted); line-height: 1.75; }
+    .card-title { margin: 1rem 0 .7rem; font-size: 1.2rem; line-height: 1.3; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.75; word-break: break-word; }
+    .hero-badge { display: flex; align-items: flex-start; gap: .75rem; padding: 1rem 1.15rem; border-radius: 20px; background: rgba(15,36,55,.95); border: 1px solid rgba(148,163,184,.14); color: var(--text); font-size: .95rem; min-height: 84px; }
+    .hero-badge span { font-size: 1.3rem; line-height: 1; margin-top: 0.1rem; }
+    .hero-badge p { margin: 0; }
+    .hero-badges { display: grid; gap: .85rem; margin-top: 1.75rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
     /* STYLE DLA SEKCJI JAK TO DZIAŁA */
     .process-section { padding: 4rem 2rem; }
@@ -102,15 +102,15 @@
     }
 
     .process-icon-wrapper {
-      width: 72px;
-      height: 72px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(16, 185, 129, 0.05));
+      width: 84px;
+      height: 84px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(16, 185, 129, 0.07));
       border: 1px solid rgba(34, 197, 94, 0.3);
       display: grid;
       place-items: center;
       color: var(--accent);
-      box-shadow: inset 0 0 15px rgba(34, 197, 94, 0.1);
+      box-shadow: inset 0 0 18px rgba(34, 197, 94, 0.12);
     }
 
     .process-step-badge {
@@ -198,6 +198,7 @@
         <nav class="nav">
           <a href="#zakres">Co odkupujemy</a>
           <a href="#jak-to-dziala">Jak to działa</a>
+          <a href="#faq">FAQ</a>
           <a href="#kontakt">Kontakt</a>
         </nav>
       </div>
@@ -330,39 +331,27 @@
           </article>
 
           <article class="card">
-            <div style="display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;">
-              <div style="font-size:1.7rem; color:var(--accent);">🛡</div>
-              <div style="text-align:right;">
+            <div style="display:flex; gap:1rem; align-items:center;">
+              <div style="width:84px; height:84px; border-radius:24px; display:grid; place-items:center; background:rgba(16,185,129,.14); color:var(--accent); font-size:2.4rem;">🛡️</div>
+              <div>
                 <p style="margin:0; font-size:1.6rem; color:#fff;">AC</p>
-                <p style="margin:0; color:var(--muted); font-size:.9rem;">Własna polisa</p>
+                <p style="margin:0; color:var(--muted); font-size:.95rem;">Własna polisa</p>
               </div>
             </div>
             <h3 class="card-title">Szkody z Autocasco (AC)</h3>
-            <p>Uszkodziłeś auto ze swojej winy? Analizujemy, czy ubezpieczyciel rozliczył kosztorys zgodnie z Twoją umową i nie zastosował nielegalnych potrąceń.</p>
+            <p>Analizujemy kosztorysy AC, by sprawdzić, czy ubezpieczyciel zaniżył naprawę lub zastosował nieuzasadnione potrącenia. Dysponujemy szybką wyceną i dopłatą do realnej wartości szkody.</p>
           </article>
 
           <article class="card">
-            <div style="display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;">
-              <div style="font-size:1.7rem; color:var(--accent);">⚠️</div>
-              <div style="text-align:right;">
-                <p style="margin:0; font-size:1.6rem; color:#fff;">100%</p>
-                <p style="margin:0; color:var(--muted); font-size:.9rem;">Wycena wraków</p>
-              </div>
-            </div>
-            <h3 class="card-title">Szkody Całkowite</h3>
-            <p>Ubezpieczalnia uznała naprawę za nieopłacalną i zaniżyła wartość samochodu przed wypadkiem? Odkupujemy roszczenia wynikające ze złej wyceny auta.</p>
-          </article>
-
-          <article class="card">
-            <div style="display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;">
-              <div style="font-size:1.7rem; color:var(--accent);">📅</div>
-              <div style="text-align:right;">
-                <p style="margin:0; font-size:1.6rem; color:#fff;">Do 3 lat</p>
-                <p style="margin:0; color:var(--muted); font-size:.9rem;">Wstecz od zdarzenia</p>
+            <div style="display:flex; gap:1rem; align-items:center;">
+              <div style="width:84px; height:84px; border-radius:24px; display:grid; place-items:center; background:rgba(34,197,94,.14); color:var(--accent); font-size:2.4rem;">⏳</div>
+              <div>
+                <p style="margin:0; font-size:1.6rem; color:#fff;">Do 3 lata</p>
+                <p style="margin:0; color:var(--muted); font-size:.95rem;">Wstecz od zdarzenia</p>
               </div>
             </div>
             <h3 class="card-title">Szkody z lat ubiegłych</h3>
-            <p>Miałeś stłuczkę rok lub dwa lata temu? Jeśli auto nie zostało sprzedane lub nie minęły 3 lata od decyzji, nadal możemy odkupić od Ciebie ten kosztorys.</p>
+            <p>Miałeś szkodę w przeszłości? Jeżeli auto nadal jest w Twoim posiadaniu i nie minęły 3 lata od decyzji ubezpieczyciela, możemy odkupić Twój kosztorys.</p>
           </article>
         </div>
       </section>
@@ -377,8 +366,9 @@
 
           <div class="process-steps">
             <article class="process-card">
+              <article class="process-card">
               <div class="process-icon-wrapper">
-                <div style="font-size:1.5rem;">📄</div>
+                <div style="font-size:2rem;">🧾</div>
               </div>
               <div class="process-card-content">
                 <div class="process-step-badge">KROK 1</div>
@@ -389,7 +379,7 @@
 
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <div style="font-size:1.5rem;">✉️</div>
+                <div style="font-size:2rem;">💬</div>
               </div>
               <div class="process-card-content">
                 <div class="process-step-badge">KROK 2</div>
@@ -400,7 +390,7 @@
 
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <div style="font-size:1.5rem;">🏦</div>
+                <div style="font-size:2rem;">🏦</div>
               </div>
               <div class="process-card-content">
                 <div class="process-step-badge">KROK 3</div>
@@ -443,8 +433,7 @@
               <p style="margin:.3rem 0; color:#fff;"><strong>Firma:</strong> KasaZaSzkodę.pl</p>
               <p style="margin:.3rem 0; color:#fff;"><strong>E-mail:</strong> <a href="mailto:kontakt@kasazaszkode.pl" style="color:var(--accent); text-decoration:none;">kontakt@kasazaszkode.pl</a></p>
               <p style="margin:.3rem 0; color:#fff;"><strong>Telefon:</strong> <a href="tel:+48739036885" style="color:var(--accent); text-decoration:none;">+48 739 036 885</a></p>
-              <p style="margin:.3rem 0; color:#fff;"><strong>Biuro:</strong> Warszawa / obsługa online dla całej Polski</p>
-            </div>
+              </div>
             <div style="min-height:180px; border-radius:24px; background:rgba(255,255,255,.04); border:1px solid rgba(148,163,184,.12); display:flex; align-items:center; justify-content:center; text-align:center; padding:1rem; color:var(--muted);">
               <div>
                 <p style="margin:0 0 .5rem; color:#fff; font-weight:700;">Prosta mapa i lokalizacja</p>
