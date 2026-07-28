@@ -216,18 +216,22 @@
               <div class="hero-badge"><span>✅</span>Brak prowizji i ukrytych opłat</div>
               <div class="hero-badge"><span>✅</span>Obsługa klientów z całej Polski</div>
             </div>
-            <form class="hero-form" action="#kontakt" method="get">
-              <input name="email" type="email" required placeholder="Twój e-mail" />
+            <form id="contact-form" class="hero-form" action="#kontakt" method="post" enctype="multipart/form-data">
+              <input id="email" name="email" type="email" required placeholder="Adres e-mail (wymagany)" />
               <div class="hero-form-row">
-                <input name="imie" type="text" placeholder="Imię (opcjonalne)" />
-                <input name="telefon" type="tel" placeholder="Telefon (opcjonalny)" />
+                <input id="imie" name="imie" type="text" placeholder="Imię (opcjonalne)" />
+                <input id="telefon" name="telefon" type="tel" placeholder="Telefon (opcjonalny)" />
               </div>
-              <select name="rodzaj" required>
+              <select id="rodzaj-szkody" name="rodzaj-szkody" required>
                 <option value="oc">Szkoda z OC</option>
                 <option value="ac">Szkoda z AC</option>
               </select>
-                <button type="submit" class="button-primary">Wyślij dokumenty</button>
-              <a href="tel:+48739036885" class="hero-call">Zadzwoń</a>
+              <label for="dokumenty" style="color:var(--muted); font-size:.95rem;">Dodaj kosztorys i decyzję ubezpieczyciela</label>
+              <div id="dropzone" class="dropzone" onclick="document.getElementById('dokumenty').click();">
+                Przeciągnij pliki lub kliknij, aby je dodać (kosztorys, decyzja, zdjęcia)
+              </div>
+              <input id="dokumenty" name="dokumenty" type="file" multiple style="display:none;" />
+              <button type="submit" class="button-primary">Wyślij dokumenty</button>
             </form>
             <div class="hero-trust">Nie pobieramy prowizji. Analiza dokumentów jest całkowicie bezpłatna. Sam decydujesz, czy przyjąć naszą ofertę.</div>
           </div>
@@ -368,42 +372,30 @@
         <div class="container" style="width: 100%;">
           <div class="process-intro">
             <small>Proces</small>
-            <h2 class="process-heading">Cały proces w 4 prostych krokach</h2>
-            <p>Szybko, prosto i przejrzyście. Prześlij dokumenty i otrzymaj ofertę odkupu.</p>
+            <h2 class="process-heading">Jak to działa</h2>
+            <p>Prześlij dokumenty, otrzymaj ofertę odkupu, podpisz umowę i wypłata nastąpi nawet w 48 godzin.</p>
           </div>
 
           <div class="process-steps">
-            <!-- KROK 1 -->
             <article class="process-card">
               <div class="process-icon-wrapper">
                 <div style="font-size:1.5rem;">📄</div>
               </div>
               <div class="process-card-content">
-                <div class="process-step-badge">KROK 01</div>
-                <h3>Wyślij dokumenty</h3>
-                <p>Prześlij kosztorys lub decyzję ubezpieczyciela oraz inne dokumenty szkody.</p>
+                <div class="process-step-badge">KROK 1</div>
+                <h3>Prześlesz dokumenty</h3>
+                <p>Bezpłatna i niezobowiązująca analiza kosztorysu oraz decyzji ubezpieczyciela.</p>
               </div>
             </article>
 
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <div style="font-size:1.5rem;">🔍</div>
+                <div style="font-size:1.5rem;">✉️</div>
               </div>
               <div class="process-card-content">
-                <div class="process-step-badge">KROK 02</div>
-                <h3>Otrzymaj bezpłatną analizę</h3>
-                <p>Nasi eksperci sprawdzą dokumenty i przygotują ofertę odkupu.</p>
-              </div>
-            </article>
-
-            <article class="process-card">
-              <div class="process-icon-wrapper">
-                <div style="font-size:1.5rem;">💰</div>
-              </div>
-              <div class="process-card-content">
-                <div class="process-step-badge">KROK 03</div>
-                <h3>Zaakceptuj ofertę</h3>
-                <p>Ty decydujesz, czy przyjmujesz ofertę odkupu szkody.</p>
+                <div class="process-step-badge">KROK 2</div>
+                <h3>Otrzymasz ofertę odkupu</h3>
+                <p>Szybka wycena realnej wartości szkody, bez czekania na procesy sądowe.</p>
               </div>
             </article>
 
@@ -412,21 +404,21 @@
                 <div style="font-size:1.5rem;">🏦</div>
               </div>
               <div class="process-card-content">
-                <div class="process-step-badge">KROK 04</div>
-                <h3>Odbierz pieniądze</h3>
-                <p>Wypłata trafia na konto w ciągu 48 godzin od podpisania umowy.</p>
+                <div class="process-step-badge">KROK 3</div>
+                <h3>Podpisujesz umowę i wypłacamy pieniądze</h3>
+                <p>Wypłata środków na Twoje konto nawet w ciągu 48h.</p>
               </div>
             </article>
           </div>
 
           <div class="process-facts">
-            <h3>Warunki odkupu szkody komunikacyjnej</h3>
-              <p>Abyśmy mogli przedstawić ofertę odkupu Twojej szkody, musisz spełniać kilka prostych kryteriów:</p>
+            <h3>Ubezpieczyciele często zaniżają wypłaty</h3>
+            <p>W praktyce OC zaniża kwoty odszkodowań nawet o 30–50%. Sprawdź, co najczęściej jest pomijane:</p>
             <ul class="process-list">
-              <li><strong>✅ Szkoda komunikacyjna:</strong> Kolizja lub wypadek z ubezpieczenia OC lub AC.</li>
-              <li><strong>✅ Czas:</strong> Zdarzenie miało miejsce w ciągu ostatnich 3 lat (36 miesięcy).</li>
-              <li><strong>✅ Rozliczenie:</strong> Wypłata nastąpiła na podstawie kosztorysu (tzw. wariantu kosztorysowego).</li>
-              <li><strong>✅ Brak ugody:</strong> Nie podpisano wcześniej ostatecznej ugody z towarzystwem ubezpieczeniowym.</li>
+              <li><strong>✅ Stosowanie tanich zamienników</strong> zamiast części oryginalnych.</li>
+              <li><strong>✅ Zaniżanie stawek</strong> za roboczogodzinę.</li>
+              <li><strong>✅ Pomijanie procedur</strong> i operacji technologicznych producenta.</li>
+              <li><strong>✅ Brak uwzględnienia</strong> utraty wartości handlowej pojazdu.</li>
             </ul>
           </div>
         </div>
@@ -435,41 +427,31 @@
       <section id="kontakt" class="section">
         <div class="contact-grid">
           <div class="contact-info">
-            <small>Bezpłatna weryfikacja</small>
-            <h2>Sprawdź, ile dopłacimy do Twojego kosztorysu</h2>
-            <p style="color:var(--muted); line-height:1.8; margin-top:1rem;">Wyślij zgłoszenie lub zostaw telefon. Nasz rzeczoznawca przeanalizuje wycenę ubezpieczyciela i oddzwoni z gotową ofertą. Analiza jest w 100% darmowa.</p>
+            <small>Kontakt</small>
+            <h2>Skontaktuj się z nami</h2>
+            <p style="color:var(--muted); line-height:1.8; margin-top:1rem;">Masz pytania? Zadzwoń, napisz e-mail lub wypełnij formularz na górze strony. Obsługujemy klientów z całej Polski.</p>
             <div style="margin-top:1.75rem; display:flex; gap:1rem; align-items:center; padding:1.2rem; border-radius:24px; background:rgba(15,36,55,.85); border:1px solid rgba(16,185,129,.14);">
               <span style="display:grid; place-items:center; width:44px; height:44px; border-radius:16px; background:rgba(34,197,94,.12); color:var(--accent);">☎</span>
               <div>
-                <p style="margin:0; color:var(--muted); font-size:.95rem;">Preferujesz kontakt telefoniczny?</p>
+                <p style="margin:0; color:var(--muted); font-size:.95rem;">Szybki kontakt telefoniczny</p>
                 <a href="tel:+48739036885" style="color:#fff; font-weight:700; text-decoration:none;">+48 739 036 885</a>
               </div>
             </div>
           </div>
-          <div class="contact-card">
-            <form id="contact-form" method="post" enctype="multipart/form-data">
-              <label for="imie">Imię (opcjonalne)</label>
-              <input id="imie" name="imie" type="text" placeholder="np. Grzegorz" />
-              <label for="telefon">Telefon (opcjonalny)</label>
-              <input id="telefon" name="telefon" type="tel" placeholder="np. 512 340 987" />
-              <label for="email">Adres e-mail (wymagany)</label>
-              <input id="email" name="email" type="email" required placeholder="np. twoj@email.pl" />
-              <label for="rodzaj-szkody">Rodzaj szkody</label>
-              <select id="rodzaj-szkody" name="rodzaj-szkody">
-                <option value="oc">Szkoda z OC</option>
-                <option value="ac">Szkoda z AC</option>
-              </select>
-
-              <label for="dokumenty">Prześlij dokumenty</label>
-              <div id="dropzone" class="dropzone" onclick="document.getElementById('dokumenty').click();">
-                Przeciągnij pliki lub kliknij, aby je dodać (kilka plików jednocześnie)
+          <div class="contact-card" style="display: grid; gap: 1rem;">
+            <div style="padding: 1.75rem; border-radius: 28px; background: rgba(8,24,41,.95); border:1px solid rgba(16,185,129,.14);">
+              <p style="margin:0 0 .8rem; font-size:1rem; color:var(--muted);">Dane firmy</p>
+              <p style="margin:.3rem 0; color:#fff;"><strong>Firma:</strong> KasaZaSzkodę.pl</p>
+              <p style="margin:.3rem 0; color:#fff;"><strong>E-mail:</strong> <a href="mailto:kontakt@kasazaszkode.pl" style="color:var(--accent); text-decoration:none;">kontakt@kasazaszkode.pl</a></p>
+              <p style="margin:.3rem 0; color:#fff;"><strong>Telefon:</strong> <a href="tel:+48739036885" style="color:var(--accent); text-decoration:none;">+48 739 036 885</a></p>
+              <p style="margin:.3rem 0; color:#fff;"><strong>Biuro:</strong> Warszawa / obsługa online dla całej Polski</p>
+            </div>
+            <div style="min-height:180px; border-radius:24px; background:rgba(255,255,255,.04); border:1px solid rgba(148,163,184,.12); display:flex; align-items:center; justify-content:center; text-align:center; padding:1rem; color:var(--muted);">
+              <div>
+                <p style="margin:0 0 .5rem; color:#fff; font-weight:700;">Prosta mapa i lokalizacja</p>
+                <p style="margin:0;">Obsługujemy klientów online w całej Polsce. Spotkania możliwe również po wcześniejszym umówieniu.</p>
               </div>
-              <input id="dokumenty" name="dokumenty" type="file" multiple style="display:none;" />
-
-              <button type="submit">Wyślij dokumenty</button>
-              <small>Wysyłając formularz zgadzasz się na bezpłatny kontakt w celu przedstawienia oferty odkupu.</small>
-            </form>
-            <p style="margin-top:0.9rem; color:var(--accent); font-weight:700;">Nie pobieramy prowizji ani żadnych opłat od klientów. Decyzja o przyjęciu oferty należy do Ciebie.</p>
+            </div>
           </div>
         </div>
       </section>
