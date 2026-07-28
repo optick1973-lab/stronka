@@ -62,6 +62,22 @@
     .process-grid { display: grid; gap: 1.5rem; }
     .step { padding: 1.7rem 1.4rem; border-radius: 24px; background: rgba(8,24,41,.9); border: 1px solid rgba(148,163,184,.12); }
     .step-number { color: var(--accent); font-size: 2.5rem; margin-bottom: .75rem; display: block; }
+    .process-section { padding-top: 1rem; }
+    .process-intro { max-width: 760px; }
+    .process-heading { font-size: clamp(2rem, 3.2vw, 2.7rem); margin: .5rem 0 .8rem; line-height: 1.1; }
+    .process-intro p { color: var(--muted); line-height: 1.8; font-size: 1.03rem; }
+    .process-steps { display: grid; gap: 1.2rem; margin-top: 2rem; }
+    .process-card { display: flex; gap: 1rem; align-items: flex-start; padding: 1.35rem 1.25rem; border-radius: 24px; background: linear-gradient(135deg, rgba(8,24,41,.96), rgba(10,29,46,.96)); border: 1px solid rgba(148,163,184,.16); box-shadow: 0 20px 45px rgba(2,8,23,.2); }
+    .process-icon { flex-shrink: 0; width: 56px; height: 56px; border-radius: 18px; background: rgba(34,197,94,.14); display: grid; place-items: center; font-size: 1.45rem; }
+    .process-card h3 { margin: .15rem 0 .45rem; font-size: 1.2rem; color: #fff; }
+    .process-card p { margin: 0; color: var(--muted); line-height: 1.75; }
+    .process-step-badge { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; margin-bottom: .7rem; border-radius: 999px; background: rgba(16,185,129,.15); color: var(--accent); font-weight: 700; font-size: .95rem; }
+    .process-facts { margin-top: 2rem; padding: 2rem; border-radius: 28px; background: rgba(6,21,31,.7); border: 1px solid rgba(16,185,129,.16); }
+    .process-facts h3 { margin: 0 0 .7rem; font-size: clamp(1.35rem, 2vw, 1.65rem); }
+    .process-facts p { color: var(--muted); line-height: 1.8; margin: 0; }
+    .process-list { list-style: none; padding: 0; margin: 1.1rem 0 0; display: grid; gap: .85rem; }
+    .process-list li { display: flex; gap: .8rem; align-items: flex-start; padding: .9rem 1rem; border-radius: 16px; background: rgba(255,255,255,.04); color: var(--text); }
+    .process-list strong { color: var(--accent); }
     .contact-grid { display: grid; gap: 2rem; align-items: start; }
     .contact-info { max-width: 28rem; }
     .contact-card { padding: 2rem; border-radius: 32px; background: rgba(8,24,41,.95); border: 1px solid rgba(16,185,129,.14); }
@@ -94,7 +110,6 @@
       <div class="container header-inner">
         <a href="#top" class="brand"><span class="brand-mark">K</span><span>KasaZaSzkodę.pl</span></a>
         <nav class="nav">
-          <a href="#uslugi">Usługi</a>
           <a href="#jak-to-dziala">Jak to działa</a>
           <a href="#kontakt">Kontakt</a>
         </nav>
@@ -194,20 +209,54 @@
         </div>
       </section>
 
-      <section id="jak-to-dziala" class="section" style="background: rgba(15,36,55,.5); border-radius: 32px;">
-        <small>Proces</small>
-        <h2>Jak to działa</h2>
-        <div class="process-grid" style="margin-top:2rem;">
-          <article class="step">
-            <span class="step-number">01</span>
-            <h3>Zgłaszasz sprawę</h3>
-            <p>Telefonicznie lub przez formularz — zajmuje 3 minuty.</p>
-          </article>
-          <article class="step">
-            <span class="step-number">02</span>
-            <h3>Analizujemy dokumenty</h3>
-            <p>Rzeczoznawca i prawnik oceniają szanse w 48 godzin.</p>
-          </article>
+      <section id="jak-to-dziala" class="section process-section" style="background: rgba(15,36,55,.5); border-radius: 32px;">
+        <div class="container" style="width: min(100%, 100%);">
+          <div class="process-intro">
+            <small>Proces</small>
+            <h2 class="process-heading">Jak to działa?</h2>
+            <p>3 proste kroki do dodatkowych pieniędzy — szybko, przejrzyście i bez zbędnych formalności po Twojej stronie.</p>
+          </div>
+
+          <div class="process-steps">
+            <article class="process-card">
+              <div class="process-icon">📄</div>
+              <div>
+                <div class="process-step-badge">1</div>
+                <h3>Prześlesz dokumenty</h3>
+                <p>Wyślij nam kosztorys naprawy oraz decyzję o wypłacie odszkodowania od ubezpieczyciela. Analiza Twojej sprawy jest całkowicie bezpłatna.</p>
+              </div>
+            </article>
+
+            <article class="process-card">
+              <div class="process-icon">💶</div>
+              <div>
+                <div class="process-step-badge">2</div>
+                <h3>Otrzymasz ofertę odkupu</h3>
+                <p>Nasz ekspert policzy realną wartość szkody i w krótkim czasie przedstawimy Ci konkretną propozycję szybkiej gotówki — bez czekania na procesy sądowe.</p>
+              </div>
+            </article>
+
+            <article class="process-card">
+              <div class="process-icon">🤝</div>
+              <div>
+                <div class="process-step-badge">3</div>
+                <h3>Podpisujesz umowę i wypłacamy pieniądze</h3>
+                <p>Po akceptacji oferty i podpisaniu umowy, pieniądze trafiają na Twoje konto nawet w ciągu 48 godzin. Ty masz gotówkę od ręki, a my przejmujemy dalszą walkę z ubezpieczalnią.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="process-facts">
+            <h3>O ile ubezpieczyciele zaniżają odszkodowania OC?</h3>
+            <p>Statystyki rynkowe i nasze doświadczenie pokazują, że towarzystwa ubezpieczeniowe zaniżają wypłaty odszkodowań z OC średnio od 30% do nawet 50%.</p>
+            <ul class="process-list">
+              <li><strong>🛠</strong> Stosowanie zamienników zamiast części oryginalnych.</li>
+              <li><strong>⏱</strong> Zaniżanie stawek za roboczogodzinę w warsztatach naprawczych.</li>
+              <li><strong>🔧</strong> Pomijanie w kosztorysach operacji technologicznych zalecanych przez producentów aut.</li>
+              <li><strong>🚗</strong> Zaniżanie lub pomijanie utraty wartości handlowej pojazdu.</li>
+            </ul>
+            <p style="margin-top:1rem;">Nie musisz godzić się na zaniżone odszkodowanie — sprawdź, ile dopłacimy do Twojej szkody.</p>
+          </div>
         </div>
       </section>
 
@@ -250,7 +299,7 @@
     <footer class="footer">
       <div class="container footer-inner">
         <div style="display:flex; align-items:center; gap:.75rem;"><span class="brand-mark">K</span><span>KasaZaSzkodę.pl</span></div>
-        <p class="footer-copy">© 2026 KasaZaSzkodę.pl. Wynagrodzenie pobierane wyłącznie od skutecznie odzyskanej kwoty.</p>
+        <p class="footer-copy">© 2026 KasaZaSzkodę.pl. Wynagrodzenie pobierane wyłącznie od skutecznie odkupionej kwoty szkód OC/AC.</p>
       </div>
     </footer>
 
