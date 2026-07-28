@@ -44,6 +44,10 @@
     .hero-form button { background: var(--accent); color: #04292b; border: none; cursor: pointer; }
     .hero-form-row { display: grid; gap: .85rem; grid-template-columns: 1fr 1fr; }
     .hero-call { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border-radius: 999px; padding: 1rem 1.5rem; background: transparent; border: 1px solid rgba(148,163,184,.38); color: var(--text); text-decoration: none; }
+    .hero-badge { display: flex; align-items: flex-start; gap: .75rem; padding: 1rem 1.15rem; border-radius: 20px; background: rgba(15,36,55,.95); border: 1px solid rgba(148,163,184,.14); color: var(--text); font-size: .95rem; min-height: 92px; white-space: normal; }
+    .hero-badge span { font-size: 1.3rem; line-height: 1; margin-top: 0.1rem; }
+    .hero-badge p { margin: 0; }
+    .hero-badges { display: grid; gap: .85rem; margin-top: 1.75rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
     .hero-trust { margin-top: 1rem; color: var(--accent); font-weight: 700; }
     .button-primary, .button-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 1.7rem; border-radius: 999px; text-decoration: none; font-weight: 700; }
     .button-primary { background: var(--accent); color: #04292b; box-shadow: 0 22px 55px rgba(16,185,129,.18); }
@@ -60,10 +64,14 @@
     .section h2 { font-size: 2.5rem; margin: .55rem 0 1rem; line-height: 1.06; }
     .section small { color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-weight: 700; }
     .cards { display: grid; gap: 1.5rem; }
-    .card { padding: 1.85rem 1.75rem; border-radius: 28px; background: rgba(8,24,41,.95); border: 1px solid rgba(148,163,184,.12); transition: transform .25s ease, border-color .25s ease; overflow-wrap: anywhere; }
+    .card { padding: 1.8rem 1.5rem; border-radius: 28px; background: rgba(8,24,41,.95); border: 1px solid rgba(148,163,184,.12); transition: transform .25s ease, border-color .25s ease; overflow-wrap: break-word; }
     .card:hover { transform: translateY(-4px); border-color: rgba(34,197,94,.35); }
-    .card-title { margin: 1rem 0 .7rem; font-size: 1.2rem; line-height: 1.3; }
-    .card p { margin: 0; color: var(--muted); line-height: 1.75; word-break: break-word; }
+    .card-title { margin: 1rem 0 .7rem; font-size: 1.18rem; line-height: 1.35; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.75; word-break: normal; overflow-wrap: break-word; hyphens: auto; }
+    @media (max-width: 767px) {
+      .card-title { font-size: 1.05rem; }
+      .card { padding: 1.5rem 1.2rem; }
+    }
     .hero-badge { display: flex; align-items: flex-start; gap: .75rem; padding: 1rem 1.15rem; border-radius: 20px; background: rgba(15,36,55,.95); border: 1px solid rgba(148,163,184,.14); color: var(--text); font-size: .95rem; min-height: 84px; }
     .hero-badge span { font-size: 1.3rem; line-height: 1; margin-top: 0.1rem; }
     .hero-badge p { margin: 0; }
@@ -198,7 +206,7 @@
         <nav class="nav">
           <a href="#zakres">Co odkupujemy</a>
           <a href="#jak-to-dziala">Jak to działa</a>
-          <a href="#faq">FAQ</a>
+          <a href="faq.html">FAQ</a>
           <a href="#kontakt">Kontakt</a>
         </nav>
       </div>
@@ -262,48 +270,36 @@
           <article class="card">
             <div style="font-size:1.6rem; color:var(--accent);">✔</div>
             <h3 class="card-title">Bezpłatna analiza</h3>
-            <p>Analiza dokumentów jest darmowa od pierwszego kontaktu.</p>
+            <p>Analiza dokumentów jest darmowa od pierwszego kontaktu</p>
           </article>
           <article class="card">
             <div style="font-size:1.6rem; color:var(--accent);">✔</div>
             <h3 class="card-title">Szybka decyzja</h3>
-            <p>Oferta przygotowana w ciągu 24 godzin.</p>
+            <p>Oferta przygotowana w ciągu 24 godzin</p>
           </article>
           <article class="card">
             <div style="font-size:1.6rem; color:var(--accent);">✔</div>
             <h3 class="card-title">Bez ukrytych kosztów</h3>
-            <p>Nie pobieramy prowizji ani żadnych opłat od klientów.</p>
+            <p>Nie pobieramy prowizji ani opłat od klientów</p>
           </article>
           <article class="card">
             <div style="font-size:1.6rem; color:var(--accent);">✔</div>
             <h3 class="card-title">Bez zobowiązań</h3>
-            <p>Zawsze decydujesz sam, czy przyjąć ofertę odkupu.</p>
+            <p>Zawsze decydujesz sam, czy przyjąć ofertę odkupu</p>
           </article>
           <article class="card">
             <div style="font-size:1.6rem; color:var(--accent);">✔</div>
             <h3 class="card-title">Prosta umowa</h3>
-            <p>Umowa cesji jest krótka i zrozumiała.</p>
+            <p>Umowa cesji jest krótka i zrozumiała</p>
           </article>
           <article class="card">
             <div style="font-size:1.6rem; color:var(--accent);">✔</div>
             <h3 class="card-title">Obsługa online</h3>
-            <p>Cała procedura może odbyć się zdalnie, na terenie całej Polski.</p>
+            <p>Cała procedura może odbyć się zdalnie, na terenie całej Polski</p>
           </article>
         </div>
       </section>
 
-      <section id="faq" class="section">
-        <small>FAQ</small>
-        <h2>Najczęściej zadawane pytania</h2>
-        <div style="margin-top:1rem; color:var(--muted);">
-          <p><strong>Jakie szkody odkupujecie?</strong> Odkupujemy wyłącznie szkody komunikacyjne z polis OC i AC.</p>
-          <p><strong>Jak długo trwa analiza?</strong> Zwykle przygotowujemy ofertę w ciągu 24 godzin od przesłania dokumentów.</p>
-          <p><strong>Czy wycena jest darmowa?</strong> Tak — analiza dokumentów i wycena są bezpłatne.</p>
-          <p><strong>Czy muszę zaakceptować ofertę?</strong> Nie, decyzja należy wyłącznie do Ciebie.</p>
-          <p><strong>Jakie dokumenty są potrzebne?</strong> Kosztorys, decyzja ubezpieczyciela, zdjęcia uszkodzeń i inne dokumenty szkody.</p>
-          <p><strong>Kiedy otrzymam pieniądze?</strong> Standardowo w ciągu 48 godzin od podpisania umowy cesji.</p>
-        </div>
-      </section>
 
       <section class="stats">
         <div class="stat"><strong>2 100+</strong> przeanalizowanych szkód</div>
@@ -320,10 +316,15 @@
         <div class="cards" style="margin-top:2rem;">
           <article class="card">
             <div style="display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;">
-              <div style="font-size:1.7rem; color:var(--accent);">🚗</div>
+              <div style="width:94px; height:94px; border-radius:24px; display:grid; place-items:center; background:rgba(34,197,94,.14);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 12C3 7.30558 6.85786 3 12 3C17.1421 3 21 7.30558 21 12V18H20C19.4477 18 19 18.4477 19 19C19 19.5523 19.4477 20 20 20H4C4.55228 20 5 19.5523 5 19C5 18.4477 4.55228 18 4 18H3V12Z" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.06)"/>
+                  <path d="M7 11L10.5 14L17 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <div style="text-align:right;">
                 <p style="margin:0; font-size:1.6rem; color:#fff;">OC</p>
-                <p style="margin:0; color:var(--muted); font-size:.9rem;">Sprawca zdarzenia</p>
+                <p style="margin:0; color:var(--muted); font-size:.95rem;">Sprawca zdarzenia</p>
               </div>
             </div>
             <h3 class="card-title">Szkody z OC Sprawcy</h3>
@@ -332,7 +333,12 @@
 
           <article class="card">
             <div style="display:flex; gap:1rem; align-items:center;">
-              <div style="width:84px; height:84px; border-radius:24px; display:grid; place-items:center; background:rgba(16,185,129,.14); color:var(--accent); font-size:2.4rem;">🛡️</div>
+              <div style="width:94px; height:94px; border-radius:24px; display:grid; place-items:center; background:rgba(16,185,129,.14);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 3L5 6.5V11C5 16.25 8.5 19.75 12 22.5C15.5 19.75 19 16.25 19 11V6.5L12 3Z" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.06)"/>
+                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <div>
                 <p style="margin:0; font-size:1.6rem; color:#fff;">AC</p>
                 <p style="margin:0; color:var(--muted); font-size:.95rem;">Własna polisa</p>
@@ -344,7 +350,14 @@
 
           <article class="card">
             <div style="display:flex; gap:1rem; align-items:center;">
-              <div style="width:84px; height:84px; border-radius:24px; display:grid; place-items:center; background:rgba(34,197,94,.14); color:var(--accent); font-size:2.4rem;">⏳</div>
+              <div style="width:94px; height:94px; border-radius:24px; display:grid; place-items:center; background:rgba(34,197,94,.14);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.06)"/>
+                  <path d="M8 8H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 16H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
               <div>
                 <p style="margin:0; font-size:1.6rem; color:#fff;">Do 3 lata</p>
                 <p style="margin:0; color:var(--muted); font-size:.95rem;">Wstecz od zdarzenia</p>
@@ -366,9 +379,12 @@
 
           <div class="process-steps">
             <article class="process-card">
-              <article class="process-card">
               <div class="process-icon-wrapper">
-                <div style="font-size:2rem;">🧾</div>
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 8H17C18.1046 8 19 8.89543 19 10V16C19 17.1046 18.1046 18 17 18H7C5.89543 18 5 17.1046 5 16V10C5 8.89543 5.89543 8 7 8Z" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.08)"/>
+                  <path d="M7 11H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M7 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
               </div>
               <div class="process-card-content">
                 <div class="process-step-badge">KROK 1</div>
@@ -379,7 +395,12 @@
 
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <div style="font-size:2rem;">💬</div>
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 5H19V19H5V5Z" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.08)"/>
+                  <path d="M8 9H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M8 13H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M8 17H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
               </div>
               <div class="process-card-content">
                 <div class="process-step-badge">KROK 2</div>
@@ -390,7 +411,10 @@
 
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <div style="font-size:2rem;">🏦</div>
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 3C8.13401 3 5 6.13401 5 10C5 13.866 8.13401 17 12 17C15.866 17 19 13.866 19 10C19 6.13401 15.866 3 12 3Z" stroke="currentColor" stroke-width="2" fill="rgba(255,255,255,0.08)"/>
+                  <path d="M12 6V10L14.5 11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
               </div>
               <div class="process-card-content">
                 <div class="process-step-badge">KROK 3</div>

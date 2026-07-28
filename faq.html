@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — KasaZaSzkodę.pl</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    :root {
+      --bg: #06151f;
+      --surface: #0a2030;
+      --surface-2: #112a3e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #22c55e;
+      --accent-2: #10b981;
+      --border: rgba(16,185,129,.18);
+      --shadow: 0 24px 80px rgba(0,0,0,.25);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: radial-gradient(circle at top left, rgba(34,197,94,.16), transparent 35%), radial-gradient(circle at top right, rgba(14,165,233,.16), transparent 22%), var(--bg); color: var(--text); }
+    .container { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+    .header { position: sticky; top: 0; z-index: 10; background: rgba(6,21,31,.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(16,185,129,.18); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; }
+    .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text); }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px; background: linear-gradient(135deg,#22c55e,#10b981); color: #04292b; font-weight: 800; }
+    .nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav a { color: var(--muted); text-decoration: none; transition: color .2s ease; }
+    .nav a:hover, .nav a.active { color: var(--accent); }
+    .hero { padding: 5rem 0 3rem; }
+    .hero h1 { margin: .5rem 0 1rem; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.02; letter-spacing: -.04em; }
+    .hero p { margin: 0; color: var(--muted); max-width: 40rem; line-height: 1.75; }
+    .section { padding: 4rem 0; }
+    .section small { color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-weight: 700; }
+    .section h2 { font-size: 2.5rem; margin: .55rem 0 1rem; line-height: 1.06; }
+    .cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 1.5rem; }
+    .card { padding: 1.8rem 1.6rem; border-radius: 28px; background: rgba(8,24,41,.95); border: 1px solid rgba(148,163,184,.12); box-shadow: 0 20px 40px rgba(0,0,0,.2); }
+    .card h3 { margin: 0 0 .75rem; font-size: 1.25rem; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.8; }
+    .footer { padding: 3rem 0 3.5rem; border-top: 1px solid rgba(16,185,129,.14); }
+    .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+    .footer-copy { color: var(--muted); font-size: .95rem; }
+    .call-now { position: fixed; left: 50%; bottom: 1rem; transform: translateX(-50%); width: min(90%, 420px); z-index: 20; display: flex; align-items: center; justify-content: center; gap: .75rem; padding: 1rem 1.2rem; border-radius: 999px; background: var(--accent); color: #04292b; text-decoration: none; font-weight: 700; box-shadow: 0 20px 45px rgba(0,0,0,.32); }
+    @media (min-width: 768px) { .header-inner { flex-wrap: nowrap; } .call-now { left: auto; right: 1.5rem; bottom: 1.5rem; transform: none; width: auto; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="brand"><span class="brand-mark">K</span><span>KasaZaSzkodę.pl</span></a>
+        <nav class="nav">
+          <a href="index.html">Strona główna</a>
+          <a href="faq.html" class="active">FAQ</a>
+          <a href="index.html#kontakt">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <small>FAQ</small>
+        <h1>Najczęściej zadawane pytania</h1>
+        <p>Znajdź odpowiedzi na najważniejsze pytania dotyczące odkupu szkód OC i AC, dokumentów oraz czasu wypłaty.</p>
+      </section>
+
+      <section class="section">
+        <div class="cards">
+          <article class="card">
+            <h3>Co odkupujemy?</h3>
+            <p>Odkupujemy uszkodzenia pojazdów związane z polisami OC sprawcy i AC klienta, jeśli kosztorys jest zaniżony lub wypłata od ubezpieczyciela jest zbyt niska.</p>
+          </article>
+          <article class="card">
+            <h3>Jakie dokumenty są potrzebne?</h3>
+            <p>Wystarczy kosztorys, decyzja ubezpieczyciela, zdjęcia szkody i dokumenty pojazdu. Im więcej materiałów prześlesz, tym szybciej przygotujemy ofertę.</p>
+          </article>
+          <article class="card">
+            <h3>Czy analiza jest płatna?</h3>
+            <p>Nie. Analiza dokumentów oraz przygotowanie oferty odkupu są bezpłatne i niezobowiązujące.</p>
+          </article>
+          <article class="card">
+            <h3>Ile czasu zajmuje przygotowanie oferty?</h3>
+            <p>Zwykle przygotowujemy ofertę w ciągu 24 godzin od otrzymania kompletu dokumentów. Ostateczny czas zależy od jakości i kompletności przesłanych materiałów.</p>
+          </article>
+          <article class="card">
+            <h3>Kiedy otrzymam wypłatę?</h3>
+            <p>Po podpisaniu umowy cesji wypłata może trafić na Twoje konto nawet w ciągu 48 godzin. Wszystko zależy od wybranej formy przelewu i kompletności formalności.</p>
+          </article>
+          <article class="card">
+            <h3>Czy muszę zaakceptować ofertę?</h3>
+            <p>Nie. Oferta jest dla Ciebie całkowicie niezobowiązująca. Decyzja o przyjęciu propozycji należy wyłącznie do Ciebie.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div style="display:flex; align-items:center; gap:.75rem;"><span class="brand-mark">K</span><span>KasaZaSzkodę.pl</span></div>
+        <p class="footer-copy">© 2026 KasaZaSzkodę.pl. Szybki odkup szkód komunikacyjnych OC i AC, obsługa online w całej Polsce.</p>
+      </div>
+    </footer>
+  </div>
+
+  <a class="call-now" href="tel:+48739036885">📞 Zadzwoń teraz</a>
+</body>
+</html>
