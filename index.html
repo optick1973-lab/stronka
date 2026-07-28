@@ -40,6 +40,15 @@
     .hero-copy h1 { margin: .9rem 0 1rem; font-size: clamp(2.5rem, 5vw, 4.2rem); line-height: 1.02; letter-spacing: -.04em; }
     .hero-copy p { margin: 0; color: var(--muted); line-height: 1.75; max-width: 42rem; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; }
+    .hero-badges { display: grid; gap: .75rem; margin-top: 1.75rem; grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .hero-badge { display: flex; align-items: center; gap: .75rem; padding: .9rem 1rem; border-radius: 20px; background: rgba(15,36,55,.85); border: 1px solid rgba(148,163,184,.14); color: var(--text); font-size: .95rem; }
+    .hero-badge span { font-size: 1.2rem; }
+    .hero-form { display: grid; gap: .85rem; margin-top: 1.5rem; }
+    .hero-form input, .hero-form select, .hero-form button { width: 100%; border-radius: 16px; border: 1px solid rgba(148,163,184,.18); background: #071923; color: var(--text); padding: 1rem 1rem; }
+    .hero-form button { background: var(--accent); color: #04292b; border: none; cursor: pointer; }
+    .hero-form-row { display: grid; gap: .85rem; grid-template-columns: 1fr 1fr; }
+    .hero-call { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border-radius: 999px; padding: 1rem 1.5rem; background: transparent; border: 1px solid rgba(148,163,184,.38); color: var(--text); text-decoration: none; }
+    .hero-trust { margin-top: 1rem; color: var(--accent); font-weight: 700; }
     .button-primary, .button-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 1.7rem; border-radius: 999px; text-decoration: none; font-weight: 700; }
     .button-primary { background: var(--accent); color: #04292b; box-shadow: 0 22px 55px rgba(16,185,129,.18); }
     .button-secondary { border: 1px solid rgba(148,163,184,.38); color: var(--text); }
@@ -76,12 +85,12 @@
     .process-card {
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
-      padding: 2rem;
-      border-radius: 28px;
-      background: linear-gradient(145deg, rgba(10, 32, 48, 0.9), rgba(6, 21, 31, 0.95));
+      gap: 1rem;
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: rgba(8,24,41,.95);
       border: 1px solid rgba(16, 185, 129, 0.2);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.24);
       position: relative;
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
@@ -199,63 +208,82 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <small>Gotówka do ręki w 48h</small>
-            <h1>Sprzedaj swoją szkodę OC lub AC — szybko, bez prowizji i bez zbędnych formalności</h1>
-            <p style="color:var(--muted);">Wyślij dokumenty — otrzymaj ofertę — sprzedaj szkodę — odbierz pieniądze. Prosto i bez ukrytych opłat.</p>
-            <div class="hero-actions">
-              <a href="#kontakt" class="button-primary">Otrzymaj bezpłatną wycenę</a>
-              <a href="tel:+48739036885" class="button-secondary">Sprawdź, ile możemy zapłacić</a>
+            <h1>Masz szkodę OC lub AC?</h1>
+            <p style="color:var(--muted);">Prześlij dokumenty — w ciągu 24 godzin otrzymasz ofertę odkupu.</p>
+            <div class="hero-badges">
+              <div class="hero-badge"><span>✅</span>Bezpłatna analiza dokumentów</div>
+              <div class="hero-badge"><span>✅</span>Oferta nawet w 24 godziny</div>
+              <div class="hero-badge"><span>✅</span>Brak prowizji i ukrytych opłat</div>
+              <div class="hero-badge"><span>✅</span>Obsługa klientów z całej Polski</div>
             </div>
-            <div style="margin-top:1.6rem; display:flex; gap:1rem; align-items:center;">
-              <form action="#kontakt" method="get" style="display:flex; gap:.5rem; align-items:center;">
-                <input name="email" type="email" required placeholder="Twój e-mail" style="padding:.65rem .8rem; border-radius:12px; border:1px solid rgba(148,163,184,.12); background:#071923; color:var(--text);" />
-                <select name="rodzaj" style="padding:.65rem .8rem; border-radius:12px; border:1px solid rgba(148,163,184,.12); background:#071923; color:var(--text);">
-                  <option value="oc">Szkoda z OC</option>
-                  <option value="ac">Szkoda z AC</option>
-                </select>
-                <button class="button-primary" style="padding:.6rem 1rem;">Sprzedaj swoją szkodę</button>
-              </form>
-            </div>
-            <div class="hero-meta">
-              <span>Wycena w 24 godziny • Wypłata przelewu w 48h • Brak prowizji</span>
-            </div>
+            <form class="hero-form" action="#kontakt" method="get">
+              <input name="email" type="email" required placeholder="Twój e-mail" />
+              <div class="hero-form-row">
+                <input name="imie" type="text" placeholder="Imię (opcjonalne)" />
+                <input name="telefon" type="tel" placeholder="Telefon (opcjonalny)" />
+              </div>
+              <select name="rodzaj" required>
+                <option value="oc">Szkoda z OC</option>
+                <option value="ac">Szkoda z AC</option>
+              </select>
+                <button type="submit" class="button-primary">Wyślij dokumenty</button>
+              <a href="tel:+48739036885" class="hero-call">Zadzwoń</a>
+            </form>
+            <div class="hero-trust">Nie pobieramy prowizji. Analiza dokumentów jest całkowicie bezpłatna. Sam decydujesz, czy przyjąć naszą ofertę.</div>
           </div>
           <div class="hero-panel">
-            <p style="font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 0.75rem;">Przykład odkupu kosztorysu</p>
-            <p style="font-size:1.9rem; line-height:1.1; margin:0 0 1.3rem;">Szkoda z OC sprawcy, Škoda Octavia</p>
+            <p style="font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 0.75rem;">Przykład odkupu szkody</p>
+            <p style="font-size:1.9rem; line-height:1.1; margin:0 0 1.3rem;">Skoda Octavia<br><span style="font-size:1rem; color:var(--muted);">Szkoda z OC sprawcy</span></p>
             <div style="display:grid; gap:1rem;">
               <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(148,163,184,.16); padding-bottom:1rem; color:var(--muted);">
-                <span>Wypłata od ubezpieczyciela</span>
+                <span>Od ubezpieczyciela:</span>
                 <span style="color:#94a3b8;">14 200 zł</span>
               </div>
-              <div style="display:flex; justify-content:space-between; color:#fff; font-size:1.5rem; font-weight:700;">
-                <span>Nasza dopłata w gotówce</span>
+              <div style="display:flex; justify-content:space-between; color:#fff; font-size:1.3rem; font-weight:700;">
+                <span>Od KasaZaSzkode.pl:</span>
                 <span style="color:var(--accent);">+ 4 500 zł</span>
               </div>
-            </div>
-            <div style="margin-top:1.75rem; padding:1rem; border-radius:20px; background:rgba(34,197,94,.08); color:var(--accent);">
-              Razem dla Klienta: <strong>18 700 zł</strong> — dodatkowa kwota przeana w 48h po podpisaniu prostej umowy.
+              <div style="display:flex; justify-content:space-between; color:#fff; font-size:1.3rem; font-weight:700; border-top:1px solid rgba(148,163,184,.16); padding-top:1rem;">
+                <span>Łącznie otrzymujesz:</span>
+                <span style="color:var(--accent);">18 700 zł</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section id="features" class="section">
-        <small>Dlaczego my</small>
-        <h2>Prosty proces, jasne zasady</h2>
-        <div class="cards" style="margin-top:1.25rem; grid-template-columns: repeat(3, minmax(0,1fr));">
+        <small>Dlaczego my?</small>
+        <h2>Dlaczego my?</h2>
+        <div class="cards" style="margin-top:1.25rem; grid-template-columns: repeat(3, minmax(0,1fr)); gap:1rem;">
           <article class="card">
-            <div style="font-size:1.6rem; color:var(--accent);">🆓</div>
-            <h3 class="card-title">Bezpłatna wycena</h3>
-            <p>Analiza kosztorysu i decyzji ubezpieczyciela bez opłat.</p>
+            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
+            <h3 class="card-title">Bezpłatna analiza</h3>
+            <p>Analiza dokumentów jest darmowa od pierwszego kontaktu.</p>
           </article>
           <article class="card">
-            <div style="font-size:1.6rem; color:var(--accent);">⚡</div>
-            <h3 class="card-title">Szybka analiza</h3>
-            <p>Oferta nawet w 24 godziny po przesłaniu dokumentów.</p>
+            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
+            <h3 class="card-title">Szybka decyzja</h3>
+            <p>Oferta przygotowana w ciągu 24 godzin.</p>
           </article>
           <article class="card">
-            <div style="font-size:1.6rem; color:var(--accent);">🔒</div>
-            <h3 class="card-title">Brak prowizji</h3>
-            <p>Nie pobieramy prowizji ani żadnych ukrytych opłat.</p>
+            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
+            <h3 class="card-title">Bez ukrytych kosztów</h3>
+            <p>Nie pobieramy prowizji ani żadnych opłat od klientów.</p>
+          </article>
+          <article class="card">
+            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
+            <h3 class="card-title">Bez zobowiązań</h3>
+            <p>Zawsze decydujesz sam, czy przyjąć ofertę odkupu.</p>
+          </article>
+          <article class="card">
+            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
+            <h3 class="card-title">Prosta umowa</h3>
+            <p>Umowa cesji jest krótka i zrozumiała.</p>
+          </article>
+          <article class="card">
+            <div style="font-size:1.6rem; color:var(--accent);">✔</div>
+            <h3 class="card-title">Obsługa online</h3>
+            <p>Cała procedura może odbyć się zdalnie, na terenie całej Polski.</p>
           </article>
         </div>
       </section>
@@ -264,20 +292,20 @@
         <small>FAQ</small>
         <h2>Najczęściej zadawane pytania</h2>
         <div style="margin-top:1rem; color:var(--muted);">
-          <p><strong>Jakie szkody odkupujecie?</strong> Odkupujemy wyłącznie szkody komunikacyjne rozliczone na podstawie kosztorysu z polis OC i AC.</p>
-          <p><strong>Czy wycena jest bezpłatna?</strong> Tak — analiza dokumentów i wycena są całkowicie darmowe.</p>
-          <p><strong>Czy muszę zaakceptować ofertę?</strong> Nie, decyzja o przyjęciu oferty należy wyłącznie do Ciebie.</p>
-          <p><strong>Jak szybko otrzymam pieniądze?</strong> Zazwyczaj przelew w ciągu 48 godzin od podpisania umowy cesji.</p>
-          <p><strong>Jakie dokumenty są potrzebne?</strong> Kosztorys naprawy, decyzja ubezpieczyciela, zdjęcia uszkodzeń i inne dokumenty dotyczące szkody.</p>
-          <p><strong>Czy mogę sprzedać szkodę po wypłacie odszkodowania?</strong> Tak — jeśli zachowałeś dokumenty i nie podpisałeś ostatecznej ugody, możemy rozważyć odkup.</p>
+          <p><strong>Jakie szkody odkupujecie?</strong> Odkupujemy wyłącznie szkody komunikacyjne z polis OC i AC.</p>
+          <p><strong>Jak długo trwa analiza?</strong> Zwykle przygotowujemy ofertę w ciągu 24 godzin od przesłania dokumentów.</p>
+          <p><strong>Czy wycena jest darmowa?</strong> Tak — analiza dokumentów i wycena są bezpłatne.</p>
+          <p><strong>Czy muszę zaakceptować ofertę?</strong> Nie, decyzja należy wyłącznie do Ciebie.</p>
+          <p><strong>Jakie dokumenty są potrzebne?</strong> Kosztorys, decyzja ubezpieczyciela, zdjęcia uszkodzeń i inne dokumenty szkody.</p>
+          <p><strong>Kiedy otrzymam pieniądze?</strong> Standardowo w ciągu 48 godzin od podpisania umowy cesji.</p>
         </div>
       </section>
 
       <section class="stats">
-        <div class="stat"><strong>2 100+</strong> odkupionych kosztorysów</div>
-        <div class="stat"><strong>48 godz.</strong> średni czas wypłaty</div>
-        <div class="stat"><strong>100%</strong> przejęcia ryzyka sporu</div>
-        <div class="stat"><strong>0 zł</strong> opłat i opłat wstępnych</div>
+        <div class="stat"><strong>2 100+</strong> przeanalizowanych szkód</div>
+        <div class="stat"><strong>48 godz.</strong> średni czas odpowiedzi</div>
+        <div class="stat"><strong>0 zł</strong> prowizji i ukrytych kosztów</div>
+        <div class="stat"><strong>100%</strong> koncentracji na odkupie szkód OC i AC</div>
       </section>
 
       <section id="zakres" class="section">
@@ -340,68 +368,53 @@
         <div class="container" style="width: 100%;">
           <div class="process-intro">
             <small>Proces</small>
-            <h2 class="process-heading">Jak wygląda odkup w 3 krokach?</h2>
-            <p>Szybko, prosto i przejrzyście. Bez sądów, opłat i niepotrzebnego czekania na wyroki.</p>
+            <h2 class="process-heading">Cały proces w 4 prostych krokach</h2>
+            <p>Szybko, prosto i przejrzyście. Prześlij dokumenty i otrzymaj ofertę odkupu.</p>
           </div>
 
           <div class="process-steps">
             <!-- KROK 1 -->
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <path d="M12 18v-6"/>
-                  <path d="M9 15l3-3 3 3"/>
-                </svg>
+                <div style="font-size:1.5rem;">📄</div>
               </div>
               <div class="process-card-content">
                 <div class="process-step-badge">KROK 01</div>
-                <h3>Przesyłasz kosztorys</h3>
-                <p>Wyślij nam kosztorys naprawy oraz decyzję ubezpieczyciela. Nasi rzeczoznawcy bezpłatnie przeanalizują dokumenty pod kątem zaniżeń.</p>
+                <h3>Wyślij dokumenty</h3>
+                <p>Prześlij kosztorys lub decyzję ubezpieczyciela oraz inne dokumenty szkody.</p>
               </div>
             </article>
 
-            <!-- KROK 2 -->
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"/>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
+                <div style="font-size:1.5rem;">🔍</div>
               </div>
               <div class="process-card-content">
                 <div class="process-step-badge">KROK 02</div>
-                <h3>Poznajesz kwotę dopłaty</h3>
-                <p>Składamy Ci konkretną ofertę odkupu. Z góry wiesz, ile czystej gotówki trafia bezpośrednio do Twojej kieszeni.</p>
+                <h3>Otrzymaj bezpłatną analizę</h3>
+                <p>Nasi eksperci sprawdzą dokumenty i przygotują ofertę odkupu.</p>
               </div>
             </article>
 
-            <!-- KROK 3 -->
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                  <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
+                <div style="font-size:1.5rem;">💰</div>
               </div>
               <div class="process-card-content">
                 <div class="process-step-badge">KROK 03</div>
-                <h3>Przelew na konto w 48h</h3>
-                <p>Po podpisaniu prostej umowy cesji, pieniądze trafiają na Twoje konto do 48 godzin. Sprawa jest dla Ciebie w 100% zamknięta.</p>
+                <h3>Zaakceptuj ofertę</h3>
+                <p>Ty decydujesz, czy przyjmujesz ofertę odkupu szkody.</p>
               </div>
             </article>
-            <!-- KROK 4 -->
+
             <article class="process-card">
               <div class="process-icon-wrapper">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 6L9 17l-5-5"/>
-                </svg>
+                <div style="font-size:1.5rem;">🏦</div>
               </div>
               <div class="process-card-content">
                 <div class="process-step-badge">KROK 04</div>
-                <h3>Akceptujesz ofertę i otrzymujesz pieniądze</h3>
-                <p>Akceptujesz przygotowaną ofertę odkupu — podpisujemy prostą umowę cesji i wypłacamy pieniądze.</p>
+                <h3>Odbierz pieniądze</h3>
+                <p>Wypłata trafia na konto w ciągu 48 godzin od podpisania umowy.</p>
               </div>
             </article>
           </div>
@@ -469,7 +482,7 @@
       </div>
     </footer>
 
-    <a class="call-now" href="tel:+48739036885">Zadzwoń teraz</a>
+    <a class="call-now" href="#kontakt">Wyślij dokumenty</a>
   </div>
   <script>
     (function(){
