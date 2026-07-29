@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Szkody z lat ubiegłych - klepsydra i kalendarz profesjonalna">
+  <defs>
+    <linearGradient id="past-grad" x1="0" x2="1">
+      <stop offset="0" stop-color="#10b981" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#059669" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <circle cx="50" cy="50" r="44" fill="url(#past-grad)" stroke="#0a3f2f" stroke-opacity="0.12" stroke-width="2.6"/>
+    <g transform="translate(18,12)">
+      <path d="M32 22 C28 28 40 36 32 44 C24 36 36 28 32 22 Z" fill="#e8fff5" opacity="0.95"/>
+      <path d="M32 54 C28 48 40 40 32 32 C24 40 36 48 32 54 Z" fill="#e8fff5" opacity="0.9"/>
+      <rect x="44" y="12" width="28" height="22" rx="3" fill="#061b1b" opacity="0.12"/>
+      <text x="58" y="28" text-anchor="middle" font-size="9" fill="#e8fff2" font-weight="800">3 LATA</text>
+    </g>
+  </g>
+</svg>

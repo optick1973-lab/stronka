@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Krok 2 - otrzymasz ofertę profesjonalne">
+  <defs>
+    <linearGradient id="step2-grad" x1="0" x2="1">
+      <stop offset="0" stop-color="#10b981" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#059669" stop-opacity="0.14"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <rect x="16" y="18" width="68" height="56" rx="8" fill="url(#step2-grad)" stroke="#074a36" stroke-opacity="0.12" stroke-width="2.6"/>
+    <path d="M28 30 H76" stroke="#e8fff2" stroke-width="1.6"/>
+    <rect x="30" y="36" width="10" height="8" rx="1" fill="#f7fff9"/>
+    <rect x="42" y="36" width="10" height="8" rx="1" fill="#f7fff9"/>
+    <text x="74" y="52" font-size="12" fill="#e8fff2" font-weight="800">PLN</text>
+    <path d="M54 40 L64 30 L70 36" stroke="#04292b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
