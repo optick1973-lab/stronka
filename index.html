@@ -312,27 +312,35 @@
             <div style="display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;">
               <div style="width:100px; height:100px; border-radius:28px; display:grid; place-items:center; background:rgba(34,197,94,.14);">
                 <div class="glass-illustration">
-                  <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="OC - zderzenie samochodów">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="OC - zderzenie samochodów profesjonalne">
                     <defs>
                       <linearGradient id="oc-grad" x1="0" x2="1">
-                        <stop offset="0" stop-color="#10b981" stop-opacity="0.20" />
-                        <stop offset="1" stop-color="#059669" stop-opacity="0.14" />
+                        <stop offset="0" stop-color="#10b981" stop-opacity="0.24"/>
+                        <stop offset="1" stop-color="#059669" stop-opacity="0.16"/>
                       </linearGradient>
-                      <linearGradient id="oc-stroke" x1="0" x2="1">
-                        <stop offset="0" stop-color="#10b981" />
-                        <stop offset="1" stop-color="#059669" />
+                      <linearGradient id="oc-ring" x1="0" x2="1">
+                        <stop offset="0" stop-color="#0ea46f"/>
+                        <stop offset="1" stop-color="#047857"/>
                       </linearGradient>
                     </defs>
                     <g>
-                      <circle cx="40" cy="40" r="34" fill="url(#oc-grad)" stroke="rgba(34,197,94,0.18)" stroke-width="3" />
-                      <!-- left car -->
-                      <path d="M18 50 C22 44 30 42 38 44 C40 44 42 46 44 48 L44 52 L20 52 Z" fill="rgba(255,255,255,0.06)" stroke="url(#oc-stroke)" stroke-width="1.5"/>
-                      <!-- right car overlapping -->
-                      <path d="M42 40 C48 36 58 36 62 42 L62 52 L46 52 C44 50 42 48 42 46 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(6,41,43,0.12)" stroke-width="1.2"/>
-                      <!-- impact spark -->
-                      <path d="M38 38 L42 34 M40 36 L44 40" stroke="#d1fae5" stroke-width="2.4" stroke-linecap="round"/>
-                      <!-- OC ring marker -->
-                      <text x="40" y="66" text-anchor="middle" font-size="9" fill="#c7f9e3" font-weight="700">OC</text>
+                      <circle cx="50" cy="50" r="44" fill="url(#oc-grad)" stroke="url(#oc-ring)" stroke-width="3" opacity="0.98"/>
+                      <!-- stylized cars with clearer shapes -->
+                      <g transform="translate(6,18)">
+                        <path d="M12 46 L22 34 L46 34 L54 44 L54 54 L12 54 Z" fill="#ffffff" fill-opacity="0.06" stroke="#0b3b2f" stroke-opacity="0.12" stroke-width="1.6"/>
+                        <rect x="18" y="38" width="12" height="6" rx="1" fill="#e6fff4" opacity="0.9"/>
+                      </g>
+                      <g transform="translate(28,12)">
+                        <path d="M12 36 L30 30 L58 36 L60 46 L36 56 L18 52 Z" fill="#ffffff" fill-opacity="0.04" stroke="#04292b" stroke-opacity="0.12" stroke-width="1.4"/>
+                        <circle cx="20" cy="50" r="2.6" fill="#0b3b2f"/>
+                        <circle cx="46" cy="50" r="2.6" fill="#0b3b2f"/>
+                      </g>
+                      <!-- clear collision spark -->
+                      <g stroke="#bfffdc" stroke-width="2.4" stroke-linecap="round">
+                        <path d="M48 44 L56 36"/>
+                        <path d="M54 44 L46 36"/>
+                      </g>
+                      <text x="50" y="82" text-anchor="middle" font-size="10" fill="#e8fff2" font-weight="700">OC</text>
                     </g>
                   </svg>
                 </div>
@@ -350,26 +358,25 @@
             <div style="display:flex; gap:1rem; align-items:center;">
               <div style="width:100px; height:100px; border-radius:28px; display:grid; place-items:center; background:rgba(16,185,129,.14);">
                 <div class="glass-illustration">
-                  <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="AC - tarcza ochronna">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="AC - tarcza ochronna profesjonalna">
                     <defs>
                       <linearGradient id="ac-grad" x1="0" x2="1">
-                        <stop offset="0" stop-color="#10b981" stop-opacity="0.18" />
-                        <stop offset="1" stop-color="#059669" stop-opacity="0.16" />
+                        <stop offset="0" stop-color="#0fb07a" stop-opacity="0.22"/>
+                        <stop offset="1" stop-color="#047857" stop-opacity="0.16"/>
                       </linearGradient>
                       <linearGradient id="ac-stroke" x1="0" x2="1">
-                        <stop offset="0" stop-color="#10b981" />
-                        <stop offset="1" stop-color="#059669" />
+                        <stop offset="0" stop-color="#10b981"/>
+                        <stop offset="1" stop-color="#059669"/>
                       </linearGradient>
                     </defs>
                     <g>
-                      <path d="M40 12 C54 12 66 20 66 34 C66 52 50 64 40 66 C30 64 14 52 14 34 C14 20 26 12 40 12 Z" fill="url(#ac-grad)" stroke="rgba(34,197,94,0.18)" stroke-width="3"/>
-                      <!-- key -->
-                      <rect x="34" y="36" width="16" height="6" rx="1" fill="#e6fff4" opacity="0.9"/>
-                      <circle cx="30" cy="34" r="3" fill="#e6fff4" opacity="0.95"/>
-                      <path d="M46 40 L50 44" stroke="#04292b" stroke-width="2" stroke-linecap="round"/>
-                      <!-- lock icon -->
-                      <rect x="32" y="28" width="16" height="10" rx="2" fill="#f8fffb" opacity="0.06"/>
-                      <text x="40" y="70" text-anchor="middle" font-size="9" fill="#c7f9e3" font-weight="700">AC</text>
+                      <!-- shield -->
+                      <path d="M50 12 C66 12 78 22 78 36 C78 56 62 70 50 76 C38 70 22 56 22 36 C22 22 34 12 50 12 Z" fill="url(#ac-grad)" stroke="url(#ac-stroke)" stroke-width="3"/>
+                      <!-- lock + key inside -->
+                      <rect x="38" y="36" width="24" height="14" rx="3" fill="#e9fff3" opacity="0.12" stroke="#0b3b2f" stroke-opacity="0.08"/>
+                      <circle cx="50" cy="44" r="2.8" fill="#06231f"/>
+                      <path d="M58 44 L66 50" stroke="#06231f" stroke-width="2" stroke-linecap="round"/>
+                      <text x="50" y="80" text-anchor="middle" font-size="10" fill="#e8fff2" font-weight="700">AC</text>
                     </g>
                   </svg>
                 </div>
@@ -387,21 +394,22 @@
             <div style="display:flex; gap:1rem; align-items:center;">
               <div style="width:100px; height:100px; border-radius:28px; display:grid; place-items:center; background:rgba(34,197,94,.14);">
                 <div class="glass-illustration">
-                  <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="Szkody z lat ubiegłych - klepsydra i kalendarz">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="Szkody z lat ubiegłych - klepsydra i kalendarz profesjonalna">
                     <defs>
                       <linearGradient id="past-grad" x1="0" x2="1">
-                        <stop offset="0" stop-color="#10b981" stop-opacity="0.14" />
-                        <stop offset="1" stop-color="#059669" stop-opacity="0.12" />
+                        <stop offset="0" stop-color="#10b981" stop-opacity="0.18"/>
+                        <stop offset="1" stop-color="#059669" stop-opacity="0.12"/>
                       </linearGradient>
                     </defs>
                     <g>
-                      <circle cx="40" cy="40" r="34" fill="url(#past-grad)" stroke="rgba(34,197,94,0.16)" stroke-width="3"/>
-                      <!-- hourglass -->
-                      <path d="M34 24 L46 24 L40 32 L34 24 Z M34 56 L46 56 L40 48 L34 56 Z" fill="#e8fff5" opacity="0.9"/>
-                      <path d="M34 24 L34 56 M46 24 L46 56" stroke="#c7f9e3" stroke-width="2" stroke-linecap="round"/>
-                      <!-- calendar badge -->
-                      <rect x="50" y="18" width="20" height="18" rx="3" fill="#061b1b" opacity="0.12"/>
-                      <text x="60" y="31" text-anchor="middle" font-size="8" fill="#c7f9e3" font-weight="800">3 LATA</text>
+                      <circle cx="50" cy="50" r="44" fill="url(#past-grad)" stroke="#0a3f2f" stroke-opacity="0.12" stroke-width="2.6"/>
+                      <!-- refined hourglass -->
+                      <g transform="translate(18,12)">
+                        <path d="M32 22 C28 28 40 36 32 44 C24 36 36 28 32 22 Z" fill="#e8fff5" opacity="0.95"/>
+                        <path d="M32 54 C28 48 40 40 32 32 C24 40 36 48 32 54 Z" fill="#e8fff5" opacity="0.9"/>
+                        <rect x="44" y="12" width="28" height="22" rx="3" fill="#061b1b" opacity="0.12"/>
+                        <text x="58" y="28" text-anchor="middle" font-size="9" fill="#e8fff2" font-weight="800">3 LATA</text>
+                      </g>
                     </g>
                   </svg>
                 </div>
@@ -429,22 +437,22 @@
             <article class="process-card">
               <div class="process-icon-wrapper">
                 <div class="glass-illustration">
-                  <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="Krok 1 - prześlesz dokumenty">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="Krok 1 - prześlesz dokumenty profesjonalne">
                     <defs>
                       <linearGradient id="step1-grad" x1="0" x2="1">
-                        <stop offset="0" stop-color="#10b981" stop-opacity="0.18" />
-                        <stop offset="1" stop-color="#059669" stop-opacity="0.14" />
+                        <stop offset="0" stop-color="#10b981" stop-opacity="0.22"/>
+                        <stop offset="1" stop-color="#059669" stop-opacity="0.16"/>
                       </linearGradient>
                     </defs>
                     <g>
-                      <rect x="16" y="18" width="48" height="44" rx="8" fill="url(#step1-grad)" stroke="rgba(34,197,94,0.16)" stroke-width="2.5"/>
-                      <!-- folder / sheet -->
-                      <path d="M22 30 H54 V38 H34 L30 34 H22 Z" fill="#e8fff5" opacity="0.9"/>
+                      <rect x="14" y="20" width="72" height="56" rx="10" fill="url(#step1-grad)" stroke="#074a36" stroke-opacity="0.12" stroke-width="2.6"/>
+                      <!-- folder and sheet -->
+                      <path d="M26 36 H74 V56 H44 L38 50 H26 Z" fill="#ffffff" fill-opacity="0.9"/>
                       <!-- check mark -->
-                      <path d="M28 42 L34 48 L46 36" stroke="#04292b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-                      <!-- upload arrow -->
-                      <path d="M40 22 V34" stroke="#c7f9e3" stroke-width="2.6" stroke-linecap="round"/>
-                      <path d="M36 26 L40 22 L44 26" stroke="#c7f9e3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M36 50 L44 58 L62 40" stroke="#04292b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <!-- upload arrow on top -->
+                      <path d="M50 28 V44" stroke="#e8fff2" stroke-width="3" stroke-linecap="round"/>
+                      <path d="M44 34 L50 28 L56 34" stroke="#e8fff2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
                     </g>
                   </svg>
                 </div>
@@ -459,21 +467,22 @@
             <article class="process-card">
               <div class="process-icon-wrapper">
                 <div class="glass-illustration">
-                  <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="Krok 2 - otrzymasz ofertę">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="Krok 2 - otrzymasz ofertę profesjonalne">
                     <defs>
                       <linearGradient id="step2-grad" x1="0" x2="1">
-                        <stop offset="0" stop-color="#10b981" stop-opacity="0.14" />
-                        <stop offset="1" stop-color="#059669" stop-opacity="0.14" />
+                        <stop offset="0" stop-color="#10b981" stop-opacity="0.18"/>
+                        <stop offset="1" stop-color="#059669" stop-opacity="0.14"/>
                       </linearGradient>
                     </defs>
                     <g>
-                      <rect x="18" y="20" width="44" height="40" rx="6" fill="url(#step2-grad)" stroke="rgba(34,197,94,0.16)" stroke-width="2.5"/>
-                      <!-- invoice / calculator -->
-                      <path d="M26 30 H54" stroke="#e8fff5" stroke-width="1.8" stroke-linecap="round"/>
-                      <rect x="30" y="36" width="8" height="6" rx="1" fill="#f8fff8" opacity="0.9"/>
-                      <text x="52" y="48" font-size="10" fill="#c7f9e3" font-weight="700">PLN</text>
-                      <!-- profit symbol -->
-                      <path d="M44 36 L48 32 L54 38" stroke="#04292b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <rect x="16" y="18" width="68" height="56" rx="8" fill="url(#step2-grad)" stroke="#074a36" stroke-opacity="0.12" stroke-width="2.6"/>
+                      <!-- sheet with calculator squares -->
+                      <path d="M28 30 H76" stroke="#e8fff2" stroke-width="1.6"/>
+                      <rect x="30" y="36" width="10" height="8" rx="1" fill="#f7fff9"/>
+                      <rect x="42" y="36" width="10" height="8" rx="1" fill="#f7fff9"/>
+                      <text x="74" y="52" font-size="12" fill="#e8fff2" font-weight="800">PLN</text>
+                      <!-- upward profit arrow -->
+                      <path d="M54 40 L64 30 L70 36" stroke="#04292b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
                     </g>
                   </svg>
                 </div>
@@ -488,22 +497,23 @@
             <article class="process-card">
               <div class="process-icon-wrapper">
                 <div class="glass-illustration">
-                  <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="Krok 3 - podpis i wypłata">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="glass-glow" role="img" aria-label="Krok 3 - podpis i wypłata profesjonalne">
                     <defs>
                       <linearGradient id="step3-grad" x1="0" x2="1">
-                        <stop offset="0" stop-color="#10b981" stop-opacity="0.16" />
-                        <stop offset="1" stop-color="#059669" stop-opacity="0.12" />
+                        <stop offset="0" stop-color="#10b981" stop-opacity="0.20"/>
+                        <stop offset="1" stop-color="#059669" stop-opacity="0.14"/>
                       </linearGradient>
                     </defs>
                     <g>
-                      <rect x="22" y="24" width="36" height="28" rx="4" fill="url(#step3-grad)" stroke="rgba(34,197,94,0.14)" stroke-width="2.5"/>
-                      <!-- signed contract -->
-                      <path d="M28 34 H52" stroke="#e8fff5" stroke-width="1.6" stroke-linecap="round"/>
-                      <path d="M28 40 H44" stroke="#c7f9e3" stroke-width="1.6" stroke-linecap="round"/>
+                      <rect x="18" y="22" width="64" height="56" rx="8" fill="url(#step3-grad)" stroke="#074a36" stroke-opacity="0.12" stroke-width="2.6"/>
+                      <!-- contract lines -->
+                      <path d="M30 36 H80" stroke="#e8fff2" stroke-width="1.6"/>
+                      <path d="M30 44 H62" stroke="#c7f9e3" stroke-width="1.4"/>
                       <!-- pen -->
-                      <path d="M50 40 L58 48" stroke="#04292b" stroke-width="2.6" stroke-linecap="round"/>
-                      <!-- money / card -->
-                      <rect x="30" y="46" width="12" height="6" rx="1" fill="#f7fff9" opacity="0.9"/>
+                      <path d="M68 48 L82 62" stroke="#04292b" stroke-width="3" stroke-linecap="round"/>
+                      <!-- bank card / money -->
+                      <rect x="30" y="58" width="20" height="10" rx="2" fill="#f7fff9"/>
+                      <text x="46" y="66" font-size="10" fill="#074a36" font-weight="700">PLN</text>
                     </g>
                   </svg>
                 </div>
