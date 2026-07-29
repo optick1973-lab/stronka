@@ -44,10 +44,13 @@
     .hero-form button { background: var(--accent); color: #04292b; border: none; cursor: pointer; }
     .hero-form-row { display: grid; gap: .85rem; grid-template-columns: 1fr 1fr; }
     .hero-call { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border-radius: 999px; padding: 1rem 1.5rem; background: transparent; border: 1px solid rgba(148,163,184,.38); color: var(--text); text-decoration: none; }
-    .hero-badge { display: flex; align-items: flex-start; gap: .75rem; padding: 1rem 1.15rem; border-radius: 20px; background: rgba(15,36,55,.95); border: 1px solid rgba(148,163,184,.14); color: var(--text); font-size: .95rem; min-height: 92px; white-space: normal; }
-    .hero-badge span { font-size: 1.3rem; line-height: 1; margin-top: 0.1rem; }
-    .hero-badge p { margin: 0; }
-    .hero-badges { display: grid; gap: .85rem; margin-top: 1.75rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .hero-badge { display: flex; align-items: center; gap: 1rem; padding: 1.2rem 1.3rem; border-radius: 24px; background: rgba(15,36,55,.95); border: 1px solid rgba(148,163,184,.14); color: var(--text); font-size: .95rem; min-height: 108px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.02); }
+    .hero-badge .badge-icon { min-width: 44px; min-height: 44px; display: grid; place-items: center; border-radius: 50%; background: rgba(16,185,129,.14); border: 1px solid rgba(16,185,129,.2); }
+    .hero-badge .badge-icon svg { width: 20px; height: 20px; display: block; }
+    .hero-badge .badge-copy { display: grid; gap: 0.2rem; }
+    .hero-badge .badge-copy span { display: block; font-weight: 700; line-height: 1.2; }
+    .hero-badge .badge-copy p { margin: 0; color: var(--muted); line-height: 1.4; hyphens: auto; word-break: keep-all; }
+    .hero-badges { display: grid; gap: 1rem; margin-top: 1.75rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .hero-trust { margin-top: 1rem; color: var(--accent); font-weight: 700; }
     .button-primary, .button-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 1.7rem; border-radius: 999px; text-decoration: none; font-weight: 700; }
     .button-primary { background: var(--accent); color: #04292b; box-shadow: 0 22px 55px rgba(16,185,129,.18); }
@@ -200,6 +203,10 @@
     }
     .dropzone.dragover { border-color: var(--accent); background: rgba(34,197,94,.03); }
 
+    @media (max-width: 991px) {
+      .hero-badges { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 767px) {
       .nav { justify-content: center; width: 100%; }
       .header-inner { flex-direction: column; align-items: flex-start; }
@@ -229,9 +236,24 @@
             <h1>Masz szkodę OC lub AC?</h1>
             <p style="color:var(--muted);">Prześlij dokumenty — w ciągu 24 godzin otrzymasz ofertę odkupu.</p>
             <div class="hero-badges">
-              <div class="hero-badge"><span>✅</span>Bezpłatna analiza dokumentów</div>
-              <div class="hero-badge"><span>✅</span>Oferta nawet w 24 godziny</div>
-              <div class="hero-badge"><span>✅</span>Brak prowizji i ukrytych opłat</div>
+              <div class="hero-badge">
+                <div class="badge-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="rgba(16,185,129,0.18)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/><path d="M8.5 12.5L10.5 14.5L15.5 9.5" stroke="#d9fdd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="badge-copy"><span>Bezpłatna analiza dokumentów</span><p>Bez ukrytych opłat i natychmiastowa weryfikacja kosztorysu.</p></div>
+              </div>
+              <div class="hero-badge">
+                <div class="badge-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="rgba(16,185,129,0.18)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/><path d="M8.5 12.5L10.5 14.5L15.5 9.5" stroke="#d9fdd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="badge-copy"><span>Oferta nawet w 24 godziny</span><p>Otrzymasz propozycję odkupu szybciej niż myślisz.</p></div>
+              </div>
+              <div class="hero-badge">
+                <div class="badge-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="rgba(16,185,129,0.18)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/><path d="M8.5 12.5L10.5 14.5L15.5 9.5" stroke="#d9fdd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="badge-copy"><span>Brak prowizji i ukrytych opłat</span><p>Oferta bez prowizji, pełna przejrzystość od pierwszego kontaktu.</p></div>
+              </div>
             </div>
             <form id="contact-form" class="hero-form" action="#kontakt" method="post" enctype="multipart/form-data">
               <input id="email" name="email" type="email" required placeholder="Adres e-mail (wymagany)" />
